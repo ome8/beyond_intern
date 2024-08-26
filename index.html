@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Foldit:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet"> -->
+    <link rel="stylesheet" href="./assets/plugins/lightbox/lightbox.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="./assets/plugins/owl/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="./assets/plugins/owl/assets/owl.theme.default.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="./assets/styles/app.css">
+
+    <script src="./assets/js/dependancy.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+
+<body>
+
+    <style>
+        .box_item {
+            border: 1px solid red;
+            height: 200px;
+            width: 200px;
+            background-color: gray;
+            position: relative;
+
+            &:hover {
+                .hover_item {
+                    visibility: visible;
+                    opacity: 1;
+                    bottom: 10px;
+                }
+            }
+
+            .hover_item {
+                position: absolute;
+                background-color: yellow;
+                width: calc(100% - 20px);
+                left: 50%;
+                transform: translateX(-50%);
+                bottom: 0px;
+                opacity: 0;
+                visibility: hidden;
+                transition-duration: .3s;
+            }
+        }
+    </style>
+    
+    <section>
+        <style>
+            .owl-dot span {
+                height: 30px;
+                width: 30px;
+                border-radius: 50%;
+                background-color: red;
+            }
+
+            .owl-item .box {
+                background-color: transparent;
+            }
+
+            .owl-item.center {
+                background-color: gray;
+
+                .box {
+                    transform: scale(1.3);
+                }
+            }
+        </style>
+        
+    </section>
+
+    <header id="header">
+        <div class="container">
+            <div class="navbar">
+                <div class="logo">
+                    <img src="https://themejunction.net/html/gerold/demo/assets/img/logo/logo-dark.png" alt="">
+                </div>
+                <div class="email">
+                    <a href="mailto:mail@smome8@gmail.com" target="_blank">
+                        smome8@gmail.com
+                    </a>
+                </div>
+                <div class="nav_list">
+                    <ul>
+                        <li><a href="#">home</a></li>
+                        <li><a href="#">about</a></li>
+                        <li><a href="#">portfolio</a></li>
+                        <li><a href="#">blog</a></li>
+                        <li><a href="#">contact</a></li>
+                    </ul>
+                </div>
+                <div class="hire_me_btn">
+                    <a href="#">
+                        hire me
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section>
+        <div class="container">
+            <div class="banner_part">
+                <div class="hi_el">
+                    HI
+                </div>
+                <div class="left">
+                    <h2 class="sub_heading">I am ome</h2>
+                    <h1 class="heading">software engineer</h1>
+                    <p class="banner_description">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse illum, odit sit voluptatum
+                        voluptate
+                        impedit quaerat minima quasi a itaque?
+                    </p>
+                    <div class="bottom_btns">
+                        <div class="download_cv">
+                            <a href="#" class="cv_btn">
+                                <span>
+                                    Download CV
+                                </span>
+                                <i class="fa-solid fa-download"></i>
+                            </a>
+                        </div>
+                        <div class="">
+                            <ul class="social_icons">
+                                <li>
+                                    <a href="#">
+                                        <i class="fa-brands fa-facebook-f"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa-brands fa-linkedin"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa-brands fa-youtube"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa-brands fa-dribbble"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="right">
+                    <img src="https://themejunction.net/html/gerold/demo/assets/img/hero/me.png" alt="">
+                </div>
+            </div>
+
+            <div class="counter_part" x-data="">
+                <template x-for="(counter_item, index) in conter_list">
+                    <div class="box">
+                        <div class="counter_item">
+                            <h4 class="count_amount">
+                                <span :class="'counter_box'+(index+1)" x-text="counter_item.counter_amount"></span>
+                                <span x-text="counter_item.counter_unit"></span>
+                            </h4>
+                            <div class="count_title">
+                                <p x-text="counter_item.counter_label_top"></p>
+                                <p x-text="counter_item.counter_label_bottom"></p>
+                            </div>
+                        </div>
+                    </div>
+                </template>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <div class="client_story">
+                <div class="client_story_left">
+                    <h2 class="heading">
+                        My Client's Stories
+                    </h2>
+                    <p class="pg">
+                        Empowering people in new a digital journey with my super services
+                    </p>
+                </div>
+                <div class="client_story_right" x-data="">
+                    <div class="client_slider owl-carousel owl-theme">
+                        <div class="client_item">
+                            <div class="profile_pic_part">
+                                <div class="left">
+                                    <img src="https://themejunction.net/html/gerold/demo/assets/img/testimonials/logo/2-dark.png"
+                                        alt="">
+                                </div>
+                                <div class="right">
+                                    <img src="https://themejunction.net/html/gerold/demo/assets/img/testimonials/user/2.jpg"
+                                        alt="">
+                                </div>
+                            </div>
+                            <div class="item_icon">
+                                <div class="left">
+                                    <i class="fas fa-caret-left"></i>
+                                </div>
+                                <div class="right">
+                                    <i class="fas fa-caret-right"></i>
+                                </div>
+                            </div>
+                            <p class="client_description">
+                                Lorem ipsum dolor sit, amet consectetur adipisicing
+                                <span x-text="i"></span>
+                            </p>
+                            <h3 class="client_name">
+                                Tim Bailey
+                            </h3>
+                            <p class="designation">
+                                seo specialist, theme junction
+                            </p>
+                        </div>
+                        <div class="client_item">
+                            <div class="profile_pic_part">
+                                <div class="left">
+                                    <img src="https://themejunction.net/html/gerold/demo/assets/img/testimonials/logo/2-dark.png"
+                                        alt="">
+                                </div>
+                                <div class="right">
+                                    <img src="https://themejunction.net/html/gerold/demo/assets/img/testimonials/user/2.jpg"
+                                        alt="">
+                                </div>
+                            </div>
+                            <div class="item_icon">
+                                <div class="left">
+                                    <i class="fas fa-caret-left"></i>
+                                </div>
+                                <div class="right">
+                                    <i class="fas fa-caret-right"></i>
+                                </div>
+                            </div>
+                            <p class="client_description">
+                                Lorem ipsum dolor sit, amet consectetur adipisicing
+                                <span x-text="i"></span>
+                            </p>
+                            <h3 class="client_name">
+                                Tim Bailey
+                            </h3>
+                            <p class="designation">
+                                seo specialist, theme junction
+                            </p>
+                        </div>
+                        <div class="client_item">
+                            <div class="profile_pic_part">
+                                <div class="left">
+                                    <img src="https://themejunction.net/html/gerold/demo/assets/img/testimonials/logo/2-dark.png"
+                                        alt="">
+                                </div>
+                                <div class="right">
+                                    <img src="https://themejunction.net/html/gerold/demo/assets/img/testimonials/user/2.jpg"
+                                        alt="">
+                                </div>
+                            </div>
+                            <div class="item_icon">
+                                <div class="left">
+                                    <i class="fas fa-caret-left"></i>
+                                </div>
+                                <div class="right">
+                                    <i class="fas fa-caret-right"></i>
+                                </div>
+                            </div>
+                            <p class="client_description">
+                                Lorem ipsum dolor sit, amet consectetur adipisicing
+                                <span x-text="i"></span>
+                            </p>
+                            <h3 class="client_name">
+                                Tim Bailey
+                            </h3>
+                            <p class="designation">
+                                seo specialist, theme junction
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <style>
+        .text-center {
+            text-align: center;
+        }
+
+        .project_filter {
+            border: var(--border);
+            padding: 0;
+            list-style-type: none;
+            display: flex;
+            justify-content: center;
+            column-gap: 20px;
+
+            li {
+                border: var(--border);
+            }
+        }
+
+        .project_list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+
+            .project_item {
+                img {
+                    width: 100%;
+                }
+            }
+        }
+    </style>
+    <section>
+        <div class="container">
+            <div class="box">
+                <div class="section_heading">
+                    <h1 class="text-center">My projects</h1>
+                </div>
+                <div class="section_pg">
+                    <p class="text-center">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, tenetur?
+                    </p>
+                </div>
+            </div>
+            <div class="box">
+                <ul class="project_filter">
+                    <li>
+                        <a class="fltr-controls" data-filter="all" href="javascript:void();">All</a>
+                    </li>
+                    <li>
+                        <a class="fltr-controls" data-filter="ux" href="javascript:void();">Ux</a>
+                    </li>
+                    <li>
+                        <a class="fltr-controls" data-filter="design" href="javascript:void();">Design</a>
+                    </li>
+                    <li>
+                        <a class="fltr-controls" data-filter="development" href="javascript:void();">Development</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="box gallery_container">
+                <div class="project_list" x-data="">
+                    <template x-for="i in gallery_images">
+                        <div class="filtr-item" x-bind:data-category="i.category" data-sort="value"
+                            class="project_item">
+                            <a :href="i.image" data-lightbox="project">
+                                <img :src="i.image" alt="">
+                            </a>
+                        </div>
+                    </template>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <style>
+        .contact_box {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+
+        .right_contact_info_item {
+            display: grid;
+            grid-template-columns: 100px 1fr;
+        }
+
+        .contact_input_grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+        }
+    </style>
+    <section>
+        <div class="container">
+            <div class="box contact_box">
+                <div class="box">
+                    <div class="box">
+                        <h2>Lets work together!</h2>
+                    </div>
+                    <div class="box">
+                        <p>
+                            I design and code beautifully simple things and i love what i do. Just simple like that!
+                        </p>
+                    </div>
+                    <div class="box">
+                        <div class="box contact_input_grid">
+                            <div class="box"><input type="text"></div>
+                            <div class="box"><input type="text"></div>
+                            <div class="box"><input type="text"></div>
+                            <div class="box"><input type="text"></div>
+                        </div>
+                        <div class="box">
+                            <div class="box">
+                                <select name="" id="">
+                                    <option value="">asdfadsf</option>
+                                    <option value="">asdfadsf</option>
+                                    <option value="">asdfadsf</option>
+                                    <option value="">asdfadsf</option>
+                                </select>
+                            </div>
+                            <div class="box">
+                                <textarea name="" id=""></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="box">
+                        <button>submit</button>
+                    </div>
+                </div>
+                <div class="box">
+
+                    <div class="box right_contact_info_item">
+                        <div class="box left_part">
+                            <button>f</button>
+                        </div>
+                        <div class="box right_part">
+                            <div class="box">
+                                <h4>email</h4>
+                            </div>
+                            <div class="box">
+                                <p>
+                                    raki@gmail.com
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="box right_contact_info_item">
+                        <div class="box left_part">
+                            <button>f</button>
+                        </div>
+                        <div class="box right_part">
+                            <div class="box">
+                                <h4>email</h4>
+                            </div>
+                            <div class="box">
+                                <p>
+                                    raki@gmail.com
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="box right_contact_info_item">
+                        <div class="box left_part">
+                            <button>f</button>
+                        </div>
+                        <div class="box right_part">
+                            <div class="box">
+                                <h4>email</h4>
+                            </div>
+                            <div class="box">
+                                <p>
+                                    raki@gmail.com
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"></script>
+    <script src="./assets/plugins/lightbox/lightbox-plus-jquery.min.js"></script>
+    <script src="./assets/plugins/countMe.min.js"></script>
+    <script src="./assets/plugins/filterizr.min.js"></script>
+    <script src="./assets/plugins/owl/owl.carousel.min.js"></script>
+
+    <script src="./assets/js/app.js"></script>
+
+</body>
+
+</html>
